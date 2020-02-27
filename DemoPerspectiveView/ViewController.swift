@@ -9,17 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true;
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()        
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+  
+  override var prefersStatusBarHidden: Bool {
+    return true
+  }
 }
 

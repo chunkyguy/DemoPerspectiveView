@@ -11,103 +11,105 @@ import UIKit
 import GLKit
 
 class PerspectiveView: UIView {
-    
-    let contentView:UIView?
-    
-    required init(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-        
-        contentView = UIView()
 
-        contentView?.backgroundColor = UIColor.yellowColor()
-        backgroundColor = UIColor.purpleColor()
+  let contentView = UIView()
 
-        setUp()
-    }
-    
-    func setUp()
-    {
-        var viewDict:[String: UIView] = [String: UIView]()
+  required init?(coder: NSCoder)
+  {
+    super.init(coder: coder)
 
-        viewDict["contentView"] = contentView!
-        addSubview(contentView!)
-        
-        if let imagePath:String = NSBundle.mainBundle().pathForResource("photo4", ofType: "JPG") {
-            let image:UIImage = UIImage(contentsOfFile: imagePath)
-            let imageView:UIImageView = UIImageView(image: image)
-            imageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-            viewDict["imageView"] = imageView
-            contentView?.addSubview(imageView)
-        }
 
-        applyConstraints(viewDict: viewDict)
-        applyPerspective()
-    }
-    
-    func applyConstraints(#viewDict:[String: UIView])
-    {
-        
-        contentView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+    setUp()
+  }
 
-        contentView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[contentView(>=100)]",
-            options: NSLayoutFormatOptions(0),
-            metrics: nil,
-            views: viewDict))
-        contentView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[contentView(>=100)]",
-            options: NSLayoutFormatOptions(0),
-            metrics: nil,
-            views: viewDict))
-        
+  override init(frame: CGRect)
+  {
+    super.init(frame: frame)
+    setUp()
+  }
 
-        contentView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[imageView]-|",
-            options: NSLayoutFormatOptions(0),
-            metrics: nil,
-            views: viewDict))
-        contentView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[imageView]-|",
-            options: NSLayoutFormatOptions(0),
-            metrics: nil,
-            views: viewDict))
+  func setUp()
+  {
+    var viewDict:[String: UIView] = [String: UIView]()
 
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[contentView]-|",
-            options: NSLayoutFormatOptions(0),
-            metrics: nil,
-            views: viewDict))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[contentView]-|",
-            options: NSLayoutFormatOptions(0),
-            metrics: nil,
-            views: viewDict))
+    viewDict["contentView"] = contentView
+    addSubview(contentView)
+
+    if let imagePath:String = Bundle.main.path(forResource: "sample", ofType: "jpg") {
+      let image = UIImage(contentsOfFile: imagePath)
+      let imageView = UIImageView(image: image)
+      imageView.translatesAutoresizingMaskIntoConstraints = false
+      viewDict["imageView"] = imageView
+      contentView.addSubview(imageView)
     }
 
-    func calculatePerspectiveTransform() -> CATransform3D
-    {
-        let eyePosition:Float = 5.0;
-        var contentTransform:CATransform3D = CATransform3DIdentity
-        contentTransform.m34 = CGFloat(-1/eyePosition)
-        
-        contentTransform = CATransform3DRotate(contentTransform, CGFloat(GLKMathDegreesToRadians(45)), 1, 0, 0)
-        contentTransform = CATransform3DTranslate(contentTransform, 0, 0, -20)
-        
-        return contentTransform
-    }
+    applyConstraints(viewDict: viewDict)
+    applyPerspective()
 
-    
-    func applyPerspective()
-    {
-        // config camera
-        let contentCam:Camera = Camera()
-        contentCam.fov = 10
-        contentCam.aspectRatio = Float(CGRectGetWidth(UIScreen.mainScreen().bounds))/Float(CGRectGetHeight(UIScreen.mainScreen().bounds))
-        contentCam.eyeZ = 25
-        
-        // config content transform
-        let contentTransform:Transform = Transform(camera: contentCam)
-        contentTransform.rotationX = 1.0
-        contentTransform.rotationY = 0.0
-        contentTransform.rotationZ = 0.0
-        contentTransform.angle = -1.0
-        
-//        contentView?.layer.sublayerTransform = contentTransform.transform
-        contentView?.layer.sublayerTransform = calculatePerspectiveTransform()
-    }
+    contentView.backgroundColor = .yellow
+    backgroundColor = .purple
+  }
+
+  func applyConstraints(viewDict:[String: UIView])
+  {
+
+    contentView.translatesAutoresizingMaskIntoConstraints = false
+    contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[contentView(>=100)]",
+                                                               options: [],
+                                                               metrics: nil,
+                                                               views: viewDict))
+    contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[contentView(>=100)]",
+                                                               options: [],
+                                                               metrics: nil,
+                                                               views: viewDict))
+
+
+    contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[imageView]-|",
+                                                               options: [],
+                                                               metrics: nil,
+                                                               views: viewDict))
+    contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[imageView]-|",
+                                                               options: [],
+                                                               metrics: nil,
+                                                               views: viewDict))
+
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[contentView]-|",
+                                                  options: [],
+                                                  metrics: nil,
+                                                  views: viewDict))
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[contentView]-|",
+                                                  options: [],
+                                                  metrics: nil,
+                                                  views: viewDict))
+  }
+
+//  func calculatePerspectiveTransform() -> CATransform3D
+//  {
+//    let eyePosition:Float = 5.0;
+//    var contentTransform:CATransform3D = CATransform3DIdentity
+//    contentTransform.m34 = CGFloat(-1/eyePosition)
+//
+//    contentTransform = CATransform3DRotate(contentTransform, CGFloat(GLKMathDegreesToRadians(45)), 1, 0, 0)
+//    contentTransform = CATransform3DTranslate(contentTransform, 0, 0, -20)
+//
+//    return contentTransform
+//  }
+
+  func applyPerspective()
+  {
+    // config camera
+    let contentCam:Camera = Camera()
+    contentCam.fov = 10
+    contentCam.aspectRatio = Float(UIScreen.main.bounds.width/UIScreen.main.bounds.height)
+    contentCam.eyeZ = 25
+
+    // config content transform
+    let contentTransform:Transform = Transform(camera: contentCam)
+    contentTransform.rotationX = 1.0
+    contentTransform.rotationY = 0.0
+    contentTransform.rotationZ = 0.0
+    contentTransform.angle = -1.0
+
+    contentView.layer.sublayerTransform = contentTransform.transform
+  }
 }

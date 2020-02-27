@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1942A45A1A01987E00474168 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1942A4591A01987E00474168 /* Camera.m */; };
-		1945FAB11A0168460024146D /* IMG_0962.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1945FAB01A0168460024146D /* IMG_0962.JPG */; };
-		1945FAB31A017DF60024146D /* photo4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1945FAB21A017DF60024146D /* photo4.JPG */; };
 		1945FAB71A01938D0024146D /* Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945FAB61A01938D0024146D /* Transform.m */; };
 		19B00D091A00E6D2001616EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B00D081A00E6D2001616EC /* AppDelegate.swift */; };
 		19B00D0B1A00E6D2001616EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B00D0A1A00E6D2001616EC /* ViewController.swift */; };
@@ -18,8 +16,7 @@
 		19B00D131A00E6D2001616EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B00D111A00E6D2001616EC /* LaunchScreen.xib */; };
 		19B00D1F1A00E6D3001616EC /* DemoPerspectiveViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B00D1E1A00E6D3001616EC /* DemoPerspectiveViewTests.swift */; };
 		19B00D291A00E718001616EC /* PerspectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B00D281A00E718001616EC /* PerspectiveView.swift */; };
-		19B00D2D1A010BD6001616EC /* IMG_0808.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 19B00D2B1A010BD6001616EC /* IMG_0808.JPG */; };
-		19B00D2E1A010BD6001616EC /* IMG_4736.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 19B00D2C1A010BD6001616EC /* IMG_4736.JPG */; };
+		79C309BD2407E41B00CFE9D3 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79C309BC2407E41B00CFE9D3 /* sample.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +32,6 @@
 /* Begin PBXFileReference section */
 		1942A4581A01987E00474168 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		1942A4591A01987E00474168 /* Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
-		1945FAB01A0168460024146D /* IMG_0962.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0962.JPG; sourceTree = "<group>"; };
-		1945FAB21A017DF60024146D /* photo4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo4.JPG; sourceTree = "<group>"; };
 		1945FAB41A01938C0024146D /* DemoPerspectiveView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoPerspectiveView-Bridging-Header.h"; sourceTree = "<group>"; };
 		1945FAB51A01938D0024146D /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
 		1945FAB61A01938D0024146D /* Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transform.m; sourceTree = "<group>"; };
@@ -51,8 +46,8 @@
 		19B00D1D1A00E6D3001616EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19B00D1E1A00E6D3001616EC /* DemoPerspectiveViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPerspectiveViewTests.swift; sourceTree = "<group>"; };
 		19B00D281A00E718001616EC /* PerspectiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerspectiveView.swift; sourceTree = "<group>"; };
-		19B00D2B1A010BD6001616EC /* IMG_0808.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0808.JPG; sourceTree = "<group>"; };
-		19B00D2C1A010BD6001616EC /* IMG_4736.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4736.JPG; sourceTree = "<group>"; };
+		79C309BC2407E41B00CFE9D3 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		79C309BE2407E46600CFE9D3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +71,7 @@
 		19B00CFA1A00E6D2001616EC = {
 			isa = PBXGroup;
 			children = (
+				79C309BE2407E46600CFE9D3 /* README.md */,
 				19B00D051A00E6D2001616EC /* DemoPerspectiveView */,
 				19B00D1B1A00E6D3001616EC /* DemoPerspectiveViewTests */,
 				19B00D041A00E6D2001616EC /* Products */,
@@ -94,7 +90,7 @@
 		19B00D051A00E6D2001616EC /* DemoPerspectiveView */ = {
 			isa = PBXGroup;
 			children = (
-				19B00D2A1A010BD6001616EC /* Photos */,
+				79C309BC2407E41B00CFE9D3 /* sample.jpg */,
 				19B00D081A00E6D2001616EC /* AppDelegate.swift */,
 				19B00D0A1A00E6D2001616EC /* ViewController.swift */,
 				19B00D281A00E718001616EC /* PerspectiveView.swift */,
@@ -134,17 +130,6 @@
 				19B00D1D1A00E6D3001616EC /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		19B00D2A1A010BD6001616EC /* Photos */ = {
-			isa = PBXGroup;
-			children = (
-				1945FAB21A017DF60024146D /* photo4.JPG */,
-				1945FAB01A0168460024146D /* IMG_0962.JPG */,
-				19B00D2B1A010BD6001616EC /* IMG_0808.JPG */,
-				19B00D2C1A010BD6001616EC /* IMG_4736.JPG */,
-			);
-			path = Photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +193,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -227,13 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1945FAB11A0168460024146D /* IMG_0962.JPG in Resources */,
 				19B00D0E1A00E6D2001616EC /* Main.storyboard in Resources */,
 				19B00D131A00E6D2001616EC /* LaunchScreen.xib in Resources */,
-				19B00D2E1A010BD6001616EC /* IMG_4736.JPG in Resources */,
 				19B00D101A00E6D2001616EC /* Images.xcassets in Resources */,
-				19B00D2D1A010BD6001616EC /* IMG_0808.JPG in Resources */,
-				1945FAB31A017DF60024146D /* photo4.JPG in Resources */,
+				79C309BD2407E41B00CFE9D3 /* sample.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +367,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoPerspectiveView/DemoPerspectiveView-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -396,6 +380,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoPerspectiveView/DemoPerspectiveView-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

@@ -16,10 +16,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-*.PNG
-*.png
-*.JPG
-*.jpg
+.DS_Store
 
 # CocoaPods
 #
